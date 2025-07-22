@@ -5,6 +5,15 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Random;
 
+// Set for atleast 5-7 yoe in swe career
+// DSA (45)
+// LLD (45)
+// HLD (45)
+
+
+
+
+
 class Dice {
     private int size;
     public Dice(int size) {
