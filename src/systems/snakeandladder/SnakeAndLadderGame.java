@@ -197,3 +197,11 @@ public class SnakeAndLadderGame {
         game.playGame();
     }
 }
+
+
+
+// api/controller 
+// service/layer
+// db/repo
+
+// models
