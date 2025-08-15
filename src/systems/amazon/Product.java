@@ -1,5 +1,7 @@
 package systems.amazon;
 
+import java.util.UUID;
+
 enum ProductCategory {
     CLOTHING, ELECTRONICS, HOUSEHOLD
 }
@@ -12,6 +14,7 @@ public class Product {
     private ProductCategory ProductCategory;
 
     public Product(String name, int price, int stock, ProductCategory productCategory) {
+        this.id = "PRODUCT" + UUID.randomUUID().toString().substring(0, 8).toUpperCase();
         this.name = name;
         this.price = price;
         this.stock = stock;
@@ -34,12 +37,17 @@ public class Product {
         return stock;
     }
 
+    @Override
+    public String toString() {
+        return name;
+    }
+
     // Current approach: synchronized methods
     // Pros: Simple, thread-safe for single JVM, prevents race conditions on stock.
     // Cons: Can be a bottleneck under high concurrency, not scalable for distributed systems.
 
-    public synchronized boolean isAvailable() {
-        return stock > 0;
+    public synchronized boolean isAvailable(int quantity) {
+        return stock >= quantity;
     }
 
     public synchronized void updateStock(int delta) {

@@ -14,7 +14,8 @@ public class Order {
     //private Map<String, OrderItem> orderItems;
     private OrderStatus orderStatus;
 
-    public Order(String customerId, List<OrderItem> orderItems) {
+    public Order(String id, String customerId, List<OrderItem> orderItems) {
+        this.id = id;
         this.customerId = customerId;
         this.items = orderItems;
         this.orderStatus = OrderStatus.PAYMENT_PENDING;

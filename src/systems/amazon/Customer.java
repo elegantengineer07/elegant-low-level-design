@@ -1,11 +1,14 @@
 package systems.amazon;
 
+import java.util.UUID;
+
 public class Customer {
     private String id;
     private String name;
     private String email;
 
     public Customer(String name, String email) {
+        this.id = "CUSTOMER" + UUID.randomUUID().toString().substring(0, 8).toUpperCase();
         this.name = name;
         this.email = email;
     }

@@ -16,6 +16,18 @@ class Message {
     }
 }
 
+class Log {
+    private String content;
+
+    public Log(String content) {
+        this.content = content;
+    }
+
+    public String getContent() {
+        return content;
+    }
+}
+
 class Publisher {
     private Set<Topic> allowedTopics;
 
