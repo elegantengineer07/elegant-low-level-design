@@ -25,18 +25,19 @@ public class AmazonServiceUI {
         Payment payment2 = new CreditCardPayment();
 
 
+        // Operation 1 
         Cart cart1 = new Cart();
         cart1.addItem(product1, 1);
         amazon.placeOrder(customer1, cart1, payment1);
 
-        // Cart cart2 = new Cart();
-        // cart2.addItem(product2, 1);
-        // amazon.placeOrder(customer2, cart2, payment2);
+        // Operation 2 
+        Cart cart2 = new Cart();
+        cart2.addItem(product2, 1);
+        amazon.placeOrder(customer2, cart2, payment2);
 
-        // search for phone
+        // Operation 3 - Search
         System.out.println(amazon.searchProducts("ph"));
 
-        // search for anything else;
 
 
     }
